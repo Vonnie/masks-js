@@ -4,8 +4,9 @@
     "description": "A NPM package that exports functions to mask values.",
     "main": "index.js",
     "scripts": {
-        "build": "babel ./src -d ./lib",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "build": "npm run lint && babel ./src -d ./lib",
+        "lint": "eslint ./src",
+        "test": "mocha --require babel-core/register"
     },
     "repository": {
         "type": "git",
@@ -23,7 +24,6 @@
         "babel-preset-env": "^1.6.1",
         "eslint": "^4.13.1",
         "eslint-config-airbnb-base": "^12.1.0",
-        "eslint-plugin-import": "^2.8.0",
-        "mocha": "^4.0.1"
+        "eslint-plugin-import": "^2.8.0"
     }
 }
